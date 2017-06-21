@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	
+	h3= title
+
+	-for(let i = 0; i < someArray.length; i++)
+		a(href='/'+ someArray[i].productLine)
+			li= someArray[i].productLine

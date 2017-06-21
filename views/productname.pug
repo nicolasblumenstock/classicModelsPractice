@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	
+	h3= title
+	h5= queryOne[0].productCode
+	h5= queryOne[0].productVendor
+	h5 Scale: #{queryOne[0].productScale}
+	h5= queryOne[0].quantityInStock
+		span  in stock!
+	h5 Currently: $#{queryOne[0].buyPrice}
+	h5 MSRP: $ #{queryOne[0].MSRP}
+	h6= queryOne[0].productDescription
+
+	h6 #{total[0].tacos} sold over #{total[0].freebird} orders!
+
+	-for(let i = 0; i < queryOne.length; i++)
+		a(href='/order/' + queryOne[i].orderNumber)
+			li= queryOne[i].orderNumber

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+	h2= title
+
+	h3 Order Status: #{queryTwo[0].status} to #{queryTwo[0].custCity}
+
+	h3 Sales Rep: #{queryTwo[0].firstName} #{queryTwo[0].lastName} in #{queryTwo[0].officeCity}
+
+	h4 Manager: #{employer[0].firstName} #{employer[0].lastName}
+
+	h3 Ordered By: #{queryTwo[0].customerName}
+
+	-for (let i = 0; i < queryTwo.length; i++)
+		li Product: #{queryTwo[i].productName}
+			li Ordered: #{queryTwo[i].quantityOrdered}
+			li Price Per: $ #{queryTwo[i].priceEach}
+		
+
+	h4 Order Total:
