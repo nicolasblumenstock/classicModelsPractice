@@ -12,10 +12,11 @@ block content
 
 	h3 Ordered By: #{queryTwo[0].customerName}
 
+	-var counter = 0;
 	-for (let i = 0; i < queryTwo.length; i++)
 		li Product: #{queryTwo[i].productName}
 			li Ordered: #{queryTwo[i].quantityOrdered}
 			li Price Per: $ #{queryTwo[i].priceEach}
-		
+		-counter += queryTwo[i].quantityOrdered * queryTwo[i].priceEach
 
-	h4 Order Total:
+	h4 Order Total: $ #{counter}
